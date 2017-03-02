@@ -1,19 +1,11 @@
 package com.example.xrecyclerview;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Handler;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -67,7 +59,7 @@ public class CollapsingToolbarLayoutActivity extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable(){
                         public void run() {
                             mRecyclerView.loadMoreComplete();
-                            for(int i = 0; i < 15 ;i++){
+                            for(int i = 0; i < 4 ;i++){
                                 listData.add("item" + (i + listData.size()) );
                             }
                             mRecyclerView.loadMoreComplete();
@@ -77,7 +69,7 @@ public class CollapsingToolbarLayoutActivity extends AppCompatActivity {
                 } else {
                     new Handler().postDelayed(new Runnable() {
                         public void run() {
-                            for(int i = 0; i < 9 ;i++){
+                            for(int i = 0; i < 2 ;i++){
                                 listData.add("item" + (1 + listData.size() ) );
                             }
                             mRecyclerView.setNoMore(true);
@@ -90,7 +82,7 @@ public class CollapsingToolbarLayoutActivity extends AppCompatActivity {
         });
 
         listData = new ArrayList<String>();
-        for(int i = 0; i < 15 ;i++){
+        for(int i = 0; i < 1 ;i++){
             listData.add("item" + i);
         }
         mAdapter = new MyAdapter(listData);
