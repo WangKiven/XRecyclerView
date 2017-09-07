@@ -318,11 +318,11 @@ public class XRecyclerView extends RecyclerView {
                 }
                 if (mWrapAdapter.getItemCount() == emptyCount) {
                     mEmptyView.setVisibility(View.VISIBLE);
-                    XRecyclerView.this.setVisibility(View.GONE);
+//                    XRecyclerView.this.setVisibility(View.GONE);
                 } else {
 
                     mEmptyView.setVisibility(View.GONE);
-                    XRecyclerView.this.setVisibility(View.VISIBLE);
+//                    XRecyclerView.this.setVisibility(View.VISIBLE);
                 }
             }
         }
