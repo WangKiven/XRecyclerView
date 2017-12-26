@@ -9,12 +9,12 @@ def siteUrl = 'https://github.com/jianghejie/XRecyclerView'
 def gitUrl = 'https://github.com/jianghejie/XRecyclerView.git'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion parent.ext.compileSdkVersion
     buildToolsVersion parent.ext.buildToolsVersion
 
     defaultConfig {
         minSdkVersion 11
-        targetSdkVersion 25
+        targetSdkVersion parent.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
@@ -27,19 +27,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    provided "com.android.support:appcompat-v7:${parent.ext.libraryVersion}"
-    provided "com.android.support:recyclerview-v7:${parent.ext.libraryVersion}"
-    provided "com.android.support:design:${parent.ext.libraryVersion}"
-}
-
-uploadArchives {
-    repositories {
-        flatDir {
-            name 'pcLocal'
-            dir "$parent.rootDir/maven/aars"
-        }
-    }
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "com.android.support:appcompat-v7:${parent.ext.libraryVersion}"
+    compile "com.android.support:recyclerview-v7:${parent.ext.libraryVersion}"
+    compile "com.android.support:design:${parent.ext.libraryVersion}"
 }
 
 install {
